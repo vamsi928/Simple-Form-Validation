@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@1,200&display=swap");
+
+/*creating variables in css */
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Allison", cursive;
+  background-color: #f9fafb;
+  display: flex; /*we use flex to make the items center */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /*vh means view port so here we are saying the body should take 100% of the viewport thus making it t0 center vertically*/
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 3);
+  width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative; /*if we want to position something absolute then the parent must be relative*/
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.form-control label {
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.form-control input:focus {
+  outline: none;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color); /*we use the variables using var()*/
+}
+
+.form-control.error input {
+  border-color: var(--error-color); /*we use the variables using var()*/
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+button {
+  padding: 10px;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
